@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Utillity.h"
+#include "Transform.h"
 #include <algorithm>
 #include <vector>
 using namespace std;
@@ -86,9 +87,8 @@ class GameObject : public GameObjectBase
     using Vector2f = learning::Vector2f;
     using ColliderCircle = learning::ColliderCircle;
     using ColliderBox = learning::ColliderBox;
-
     using BitmapInfo = renderHelp::BitmapInfo;
-
+    using Transform = transform::Transform;
 
 public:
     GameObject(const GameObject&) = delete;
@@ -112,7 +112,9 @@ public:
     void SetWidth(int w) { m_width = w; }
     void SetHeight(int h) { m_height = h; }
 
-protected:
+protected: 
+    Transform transform;
+
     void DrawCollider(HDC hdc, COLORREF color);
 
     void Move(float deltaTime);
@@ -124,21 +126,7 @@ protected:
     // Bitmap 정보
     //BitmapInfo* m_pBitmapInfo = nullptr;
     vector<BitmapInfo*> m_pBitmapInfo = {};
-    /*
-    // 점진적으로 예쁘게 고쳐 보아요.
-    struct FrameFPos
-    {
-        int x;
-        int y;
-    };
-    // 프레임 정보: 왜 14개냐고 물으시면 셌다고 밖에...:)
-   
-    FrameFPos m_frameXY[14] = { { 0, 0 }, };
-    int m_frameWidth = 0;
-    int m_frameHeight = 0;
-    int m_frameIndex = 0;
-    int m_frameCount = 14; // 프레임 수
-    */
+
     int m_width = 0;
     int m_height = 0;
 

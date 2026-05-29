@@ -141,6 +141,7 @@
     <ClInclude Include="MyFirstWndGame.h" />
     <ClInclude Include="NzWndBase.h" />
     <ClInclude Include="RenderHelp.h" />
+    <ClInclude Include="Transform.h" />
     <ClInclude Include="Utillity.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
