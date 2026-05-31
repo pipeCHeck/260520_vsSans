@@ -59,8 +59,68 @@ public:
     BitmapInfo* m_pAttack_Slash = nullptr;
     BitmapInfo* m_pUI_Box = nullptr;
 
-    //BitmapInfo* m_p = nullptr;
+	BitmapInfo* m_pBg_Shop = nullptr;
+	BitmapInfo* m_pBg_Black = nullptr;
+	BitmapInfo* m_pTable = nullptr;
 
+    BitmapInfo* m_pArmL = nullptr;
+    BitmapInfo* m_pBody = nullptr;
+    BitmapInfo* m_pBody_ArmL = nullptr;
+    BitmapInfo* m_pBody_ArmR = nullptr;
+    BitmapInfo* m_pEffects = nullptr;
+    BitmapInfo* m_pEyeL_Brow = nullptr;
+    BitmapInfo* m_pEyeL_Lid = nullptr;
+    BitmapInfo* m_pEyeL_Pupil = nullptr;
+    BitmapInfo* m_pEyeL_White = nullptr;
+    BitmapInfo* m_pEyeR_Brow = nullptr;
+    BitmapInfo* m_pEyeR_Lid = nullptr;
+    BitmapInfo* m_pEyeR_Pupil = nullptr;
+    BitmapInfo* m_pEyeR_White = nullptr;
+    BitmapInfo* m_pFace = nullptr;
+
+    BitmapInfo* m_pHair_AhogeL = nullptr;
+    BitmapInfo* m_pHair_AhogeR = nullptr;
+    BitmapInfo* m_pHairBL = nullptr;
+    BitmapInfo* m_pHairBR = nullptr;
+    BitmapInfo* m_pHairB_HeadL = nullptr;
+    BitmapInfo* m_pHairB_HeadR = nullptr;
+    BitmapInfo* m_pHairB_Head_SideTuftL = nullptr;
+    BitmapInfo* m_pHairB_Head_SideTuftR = nullptr;
+    BitmapInfo* m_pHairF = nullptr;
+    BitmapInfo* m_pHairF_Bang = nullptr;
+    BitmapInfo* m_pHairF_SideL = nullptr;
+    BitmapInfo* m_pHairF_SideR = nullptr;
+    BitmapInfo* m_pHairSideL_1 = nullptr;
+    BitmapInfo* m_pHairSideL_2 = nullptr;
+    BitmapInfo* m_pHairSideR_1 = nullptr;
+    BitmapInfo* m_pHairSideR_2 = nullptr;
+    BitmapInfo* m_pHandL = nullptr;
+    BitmapInfo* m_pMouth = nullptr;
+    BitmapInfo* m_pNose = nullptr;
+
+    BitmapInfo* m_pHair_AhogeL_Shadow = nullptr;
+    BitmapInfo* m_pHair_AhogeR_Shadow = nullptr;
+    BitmapInfo* m_pHairB_HeadL_Shadow = nullptr;
+    BitmapInfo* m_pHairB_HeadR_Shadow = nullptr;
+    BitmapInfo* m_pHairB_Head_SideTuftL_Shadow = nullptr;
+    BitmapInfo* m_pHairB_Head_SideTuftR_Shadow = nullptr;
+    BitmapInfo* m_pHairBL_Shadow = nullptr;
+    BitmapInfo* m_pHairBR_Shadow = nullptr;
+
+    BitmapInfo* m_pHair_AhogeL_Line = nullptr;
+    BitmapInfo* m_pHair_AhogeR_Line = nullptr;
+    BitmapInfo* m_pHairB_HeadL_Line = nullptr;
+    BitmapInfo* m_pHairB_HeadR_Line = nullptr;
+    BitmapInfo* m_pHairB_Head_SideTuftL_Line = nullptr;
+    BitmapInfo* m_pHairB_Head_SideTuftR_Line = nullptr;
+    BitmapInfo* m_pHairBL_Line = nullptr;
+    BitmapInfo* m_pHairBR_Line = nullptr;
+    BitmapInfo* m_pArmL_Line = nullptr;
+    BitmapInfo* m_pHandL_Line = nullptr;
+    BitmapInfo* m_pEffect_Line = nullptr;
+
+	// m_pNull 이 앞에 붙은 객체는 이미지 없는 컨트롤러 객체
+    BitmapInfo* m_pNull_Hair = nullptr;
 
 #pragma endregion
 
@@ -90,6 +150,9 @@ private:
 
     void CreatePlayer();
     void CreateEnemy();
+
+	void CreateBackground();
+	void CreateTable();
     void CreateCoffia();
 
     void UpdatePlayerInfo();

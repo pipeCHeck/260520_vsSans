@@ -23,7 +23,7 @@ bool MyFirstWndGame::Initialize()
     const wchar_t* windowName = L"MyFirstWndGame";  // _윈도우 창 이름
 
     // super는 부모를 뜻함, 부모에 Create를 불러와요~ 라는 뜻
-    if (false == __super::Create(className, windowName, 1024, 768))
+    if (false == __super::Create(className, windowName, 1440, 900))
     {
         return false;
     }
@@ -79,6 +79,71 @@ bool MyFirstWndGame::Initialize()
     m_pAttack_Bar = renderHelp::CreateBitmapInfo(L"./Resource/Sprites/Battle/UI/Attack_Bar.png", 2, 1, 2);
     m_pAttack_Slash = renderHelp::CreateBitmapInfo(L"./Resource/Sprites/Battle/UI/Attack_Slash.png", 6, 1, 6);
     m_pUI_Box = renderHelp::CreateBitmapInfo(L"./Resource/Sprites/Battle/UI/UI_Box.png");
+
+
+	// 배경 및 오브젝트 이미지 불러오기
+    m_pBg_Shop = renderHelp::CreateBitmapInfo(L"./Resource/CoffiaDailyShop/Backgorund_Shop.png");
+    m_pBg_Black = renderHelp::CreateBitmapInfo(L"./Resource/CoffiaDailyShop/Backgorund_Black.png");
+    m_pTable = renderHelp::CreateBitmapInfo(L"./Resource/CoffiaDailyShop/Table.png");
+
+	// 커피아 이미지 불러오기
+    m_pArmL = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/ArmL.png", 2, 1, 2);
+    m_pBody = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/Body.png");
+    m_pBody_ArmL = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/Body_ArmL.png");
+    m_pBody_ArmR = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/Body_ArmR.png");
+    m_pEffects = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/Effects.png", 2, 3, 6);
+    m_pEyeL_Brow = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/EyeL_Brow.png");
+    m_pEyeL_Lid = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/EyeL_Lid.png", 1, 2, 2);
+    m_pEyeL_Pupil = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/EyeL_Pupil.png", 1, 2, 2);
+    m_pEyeL_White = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/EyeL_White.png");
+    m_pEyeR_Brow = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/EyeR_Brow.png");
+    m_pEyeR_Lid = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/EyeR_Lid.png", 1, 2, 2);
+    m_pEyeR_Pupil = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/EyeR_Pupil.png", 1, 2, 2);
+    m_pEyeR_White = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/EyeR_White.png");
+    m_pFace = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/Face.png");
+    m_pHair_AhogeL = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/Hair_AhogeL.png", 3, 1, 3);
+    m_pHair_AhogeR = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/Hair_AhogeR.png", 3, 1, 3);
+    m_pHairBL = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB.png", 3, 2, 6);
+    m_pHairBR = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB.png", 3, 2, 6);
+    m_pHairB_HeadL = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB_Head.png", 3, 2, 6);
+    m_pHairB_HeadR = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB_Head.png", 3, 2, 6);
+    m_pHairB_Head_SideTuftL = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB_Head_SideTuftL.png", 1, 3, 3);
+    m_pHairB_Head_SideTuftR = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB_Head_SideTuftR.png", 1, 3, 3);
+    m_pHairF = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairF.png");
+    m_pHairF_Bang = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairF_Bang.png");
+    m_pHairF_SideL = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairF_SideL.png");
+    m_pHairF_SideR = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairF_SideR.png");
+    m_pHairSideL_1 = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairSideL_1.png");
+    m_pHairSideL_2 = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairSideL_2.png");
+    m_pHairSideR_1 = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairSideR_1.png");
+    m_pHairSideR_2 = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairSideR_2.png");
+    m_pHandL = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HandL.png", 2, 2, 4);
+    m_pMouth = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/Mouth.png", 9, 1, 9);
+    m_pNose = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/Nose.png");
+
+    m_pHair_AhogeL_Shadow = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/Hair_AhogeL.png", 3, 1, 3);
+    m_pHair_AhogeR_Shadow = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/Hair_AhogeR.png", 3, 1, 3);
+    m_pHairB_HeadL_Shadow = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB_Head.png", 3, 2, 6);
+    m_pHairB_HeadR_Shadow = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB_Head.png", 3, 2, 6);
+    m_pHairB_Head_SideTuftL_Shadow = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB_Head_SideTuftL.png", 1, 3, 3);
+    m_pHairB_Head_SideTuftR_Shadow = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB_Head_SideTuftR.png", 1, 3, 3);
+    m_pHairBL_Shadow = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB.png", 3, 2, 6);
+    m_pHairBR_Shadow = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB.png", 3, 2, 6);
+
+    m_pHair_AhogeL_Line = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/Hair_AhogeL.png", 3, 1, 3);
+    m_pHair_AhogeR_Line = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/Hair_AhogeR.png", 3, 1, 3);
+    m_pHairB_HeadL_Line = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB_Head.png", 3, 2, 6);
+    m_pHairB_HeadR_Line = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB_Head.png", 3, 2, 6);
+    m_pHairB_Head_SideTuftL_Line = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB_Head_SideTuftL.png", 1, 3, 3);
+    m_pHairB_Head_SideTuftR_Line = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB_Head_SideTuftR.png", 1, 3, 3);
+    m_pHairBL_Line = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB.png", 3, 2, 6);
+    m_pHairBR_Line = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HairB.png", 3, 2, 6);
+    m_pArmL_Line = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/ArmL.png", 2, 1, 2);
+    m_pHandL_Line = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/HandL.png", 2, 2, 4);
+    m_pEffect_Line = renderHelp::CreateBitmapInfo(L"./Resource/Coffia/Effects.png", 2, 3, 6);
+
+    m_pNull_Hair = renderHelp::CreateBitmapInfo(L"./Resource/NullObject.png");
+
 
     //std::cout << "Debuggggg" << std::endl;
     //std::cout << "sansHead curFrame:" << m_pSans_Head->GetCurFrame() << " / GetWidth: " << m_pSans_Head->GetWidth() << std::endl;
@@ -272,6 +337,17 @@ void MyFirstWndGame::LogicUpdate()
     }
 }
 
+void MyFirstWndGame::CreateBackground() 
+{
+    GameObject* pNewObject = new GameObject(ObjectType::BACKGROUND);
+    pNewObject->SetName("Background");
+    pNewObject->SetPosition(0.0f, 0.0f);
+    pNewObject->SetSpeed(0.0f);
+    // 이미지 설정
+    //
+}
+
+
 // 커피아 생성
 void MyFirstWndGame::CreateCoffia() 
 {
@@ -298,30 +374,420 @@ void MyFirstWndGame::CreatePlayer()
     pNewObject->SetSpeed(0.8f); // 일단, 임의로 설정   // _m_speed에 값 저장
 
     pNewObject->SetColliderCircle(50.0f); // 일단, 임의로 설정. 오브젝트 설정할 거 다 하고 나서 하자.
-    pNewObject->AddBitmapInfo(m_pSans_Legs_01);
-    BitmapInfo* image = pNewObject->GetLastBitmapInfo();
-    image->SetName("Legs");
-	image->GetTransform().ModifyPosition(Vector2f(0,40)); // 다리 위치 조정
-
-    pNewObject->AddBitmapInfo(m_pSans_Head);
-    image = pNewObject->GetLastBitmapInfo();
-    image->SetName("Head");
-    pNewObject->GetBitmapInfo("Head")->GetTransform().SetRotation(120);
-	pNewObject->GetBitmapInfo("Head")->GetTransform().ModifyPosition(Vector2f(0, -40)); // 머리 위치 조정
-
-    pNewObject->AddBitmapInfo(m_pSans_Torso);
-	image = pNewObject->GetLastBitmapInfo();
-	image->SetName("Torso");
-	//image->GetTransform().SetScale(Vector2f(2, 2)); // 몸통 크기 조정
-    image->SetParentImage(pNewObject->GetBitmapInfo("Head"));
-
     pNewObject->SetWidth(100);
     pNewObject->SetHeight(100);
+
+	// 이미지 설정
+    BitmapInfo* image = nullptr;
+    
+    // 이펙트
+    pNewObject->AddBitmapInfo(m_pEffects);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("Effect");
+    image->GetTransform().SetPosition(Vector2f(145, -403));
+    image->SetCurFrame(2);;
+
+    pNewObject->AddBitmapInfo(m_pArmL);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("ArmL");
+    image->GetTransform().SetPosition(Vector2f(-205, 210));
+	image->GetPivot() = Vector2f(-45, 95);
+
+    pNewObject->AddBitmapInfo(m_pHandL);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HandL");
+    image->GetTransform().SetPosition(Vector2f(100, -207));
+    image->GetPivot() = Vector2f(-12, 70);
+
+    pNewObject->AddBitmapInfo(m_pEyeR_Brow);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("EyeR_Brow");
+    image->GetTransform().SetPosition(Vector2f(-3, -70));
+
+    pNewObject->AddBitmapInfo(m_pEyeR_Lid);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("EyeR_Lid");
+    image->GetTransform().SetPosition(Vector2f(2, -24));
+
+    pNewObject->AddBitmapInfo(m_pEyeR_Pupil);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("EyeR_Pupil");
+    image->GetTransform().SetPosition(Vector2f(-12, -2));
+
+    pNewObject->AddBitmapInfo(m_pEyeR_White);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("EyeR_White");
+    image->GetTransform().SetPosition(Vector2f(80, -20));
+
+    pNewObject->AddBitmapInfo(m_pEyeL_Brow);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("EyeL_Brow");
+    image->GetTransform().SetPosition(Vector2f(3, -70));
+
+    pNewObject->AddBitmapInfo(m_pEyeL_Lid);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("EyeL_Lid");
+    image->GetTransform().SetPosition(Vector2f(-2, -24));
+
+    pNewObject->AddBitmapInfo(m_pEyeL_Pupil);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("EyeL_Pupil");
+    image->GetTransform().SetPosition(Vector2f(12, -2));
+
+    pNewObject->AddBitmapInfo(m_pEyeL_White);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("EyeL_White");
+    image->GetTransform().SetPosition(Vector2f(-80, -20));
+
+    pNewObject->AddBitmapInfo(m_pMouth);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("Mouth");
+    image->GetTransform().SetPosition(Vector2f(0, 33));
+
+    pNewObject->AddBitmapInfo(m_pNose);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("Nose");
+    image->GetTransform().SetPosition(Vector2f(0, -70));
+
+
+
+    pNewObject->AddBitmapInfo(m_pHairF_SideL);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairF_SideL");
+    image->GetTransform().SetPosition(Vector2f(2, -13));
+    image->GetPivot() = Vector2f(93, -135);
+
+    pNewObject->AddBitmapInfo(m_pHairF_SideR);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairF_SideR");
+    image->GetTransform().SetPosition(Vector2f(2, -13));
+    image->GetPivot() = Vector2f(-93, -135);
+
+    pNewObject->AddBitmapInfo(m_pHairF_Bang);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairF_Bang");
+    image->GetTransform().SetPosition(Vector2f(4, -7));
+    image->GetPivot() = Vector2f(7, -65);
+
+    pNewObject->AddBitmapInfo(m_pHairF);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairF");
+    image->GetTransform().SetPosition(Vector2f(7, -15));
+    image->GetPivot() = Vector2f(0, -115);
+
+    pNewObject->AddBitmapInfo(m_pHairSideL_1);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairSideL_1");
+    image->GetTransform().SetPosition(Vector2f(-105, 31));
+    image->GetPivot() = Vector2f(30, -200);
+
+    pNewObject->AddBitmapInfo(m_pHairSideL_2);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairSideL_2");
+    image->GetTransform().SetPosition(Vector2f(-102, 43));
+    image->GetPivot() = Vector2f(50, -300);
+
+    pNewObject->AddBitmapInfo(m_pHairSideR_1);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairSideR_1");
+    image->GetTransform().SetPosition(Vector2f(100, 37));
+    image->GetPivot() = Vector2f(-30, -200);
+
+    pNewObject->AddBitmapInfo(m_pHairSideR_2);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairSideR_2");
+    image->GetTransform().SetPosition(Vector2f(93, 66));
+    image->GetPivot() = Vector2f(-50, -300);
+
+    pNewObject->AddBitmapInfo(m_pFace);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("Face");
+    image->GetTransform().SetPosition(Vector2f(2, -362));
+    image->GetPivot() = Vector2f(0, 140);
+
+    pNewObject->AddBitmapInfo(m_pBody);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("Body");
+    image->GetTransform().SetPosition(Vector2f(0, 220));
+    image->GetPivot() = Vector2f(0, 180);
+
+    pNewObject->AddBitmapInfo(m_pBody_ArmL);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("Body_ArmL");
+    image->GetTransform().SetPosition(Vector2f(-60, -298));
+    image->GetPivot() = Vector2f(117, -158);
+
+    pNewObject->AddBitmapInfo(m_pBody_ArmR);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("Body_ArmR");
+    image->GetTransform().SetPosition(Vector2f(60, -298));
+    image->GetPivot() = Vector2f(-107, -158);
+
+    pNewObject->AddBitmapInfo(m_pHair_AhogeL);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("Hair_AhogeL");
+    image->GetTransform().SetPosition(Vector2f(0, -26));
+    image->GetPivot() = Vector2f(12, 40);
+
+    pNewObject->AddBitmapInfo(m_pHair_AhogeR);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("Hair_AhogeR");
+    image->GetTransform().SetPosition(Vector2f(0, -26));
+    image->GetPivot() = Vector2f(-42, 40);
+
+    pNewObject->AddBitmapInfo(m_pHairB_HeadL);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairB_HeadL");
+    image->GetTransform().SetPosition(Vector2f(0, -45));
+    image->GetPivot() = Vector2f(0, -170);
+
+    pNewObject->AddBitmapInfo(m_pHairB_HeadR);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairB_HeadR");
+    image->GetTransform().SetPosition(Vector2f(0, -45));
+    image->GetPivot() = Vector2f(0, -170);
+	image->SetCurFrame(3);
+
+    pNewObject->AddBitmapInfo(m_pHairB_Head_SideTuftL);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairB_Head_SideTuftL");
+    image->GetTransform().SetPosition(Vector2f(-120, 22));
+    image->GetPivot() = Vector2f(65, -35);
+
+    pNewObject->AddBitmapInfo(m_pHairB_Head_SideTuftR);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairB_Head_SideTuftR");
+    image->GetTransform().SetPosition(Vector2f(120, 18));
+    image->GetPivot() = Vector2f(-62, -50);
+
+    pNewObject->AddBitmapInfo(m_pHairBL);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairBL");
+    image->GetTransform().SetPosition(Vector2f(0, 140));
+    image->GetPivot() = Vector2f(0, -300);
+
+    pNewObject->AddBitmapInfo(m_pHairBR);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairBR");
+    image->GetTransform().SetPosition(Vector2f(0, 140));
+    image->GetPivot() = Vector2f(0, -300);
+    image->SetCurFrame(3);
+
+
+
+    // 그림자
+    pNewObject->AddBitmapInfo(m_pHair_AhogeL_Shadow);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("Hair_AhogeL_Shadow");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(12, 40);
+    image->SetCurFrame(1);
+    image->SetParentImage(pNewObject->GetBitmapInfo("Hair_AhogeL"));
+
+    pNewObject->AddBitmapInfo(m_pHair_AhogeR_Shadow);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("Hair_AhogeR_Shadow");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(-42, 40);
+    image->SetCurFrame(1);
+    image->SetParentImage(pNewObject->GetBitmapInfo("Hair_AhogeR"));
+
+    pNewObject->AddBitmapInfo(m_pHairB_HeadL_Shadow);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairB_HeadL_Shadow");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(0, -170);
+    image->SetCurFrame(1);
+    image->SetParentImage(pNewObject->GetBitmapInfo("HairB_HeadL"));
+
+    pNewObject->AddBitmapInfo(m_pHairB_HeadR_Shadow);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairB_HeadR_Shadow");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(0, -170);
+    image->SetCurFrame(4);
+    image->SetParentImage(pNewObject->GetBitmapInfo("HairB_HeadR"));
+
+    pNewObject->AddBitmapInfo(m_pHairB_Head_SideTuftL_Shadow);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairB_Head_SideTuftL_Shadow");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(65, -35);
+    image->SetCurFrame(1);
+    image->SetParentImage(pNewObject->GetBitmapInfo("HairB_Head_SideTuftL"));
+
+    pNewObject->AddBitmapInfo(m_pHairB_Head_SideTuftR_Shadow);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairB_Head_SideTuftR_Shadow");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(-62, -50);
+    image->SetCurFrame(1);
+    image->SetParentImage(pNewObject->GetBitmapInfo("HairB_Head_SideTuftR"));
+
+    pNewObject->AddBitmapInfo(m_pHairBL_Shadow);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairBL_Shadow");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(0, -300);
+    image->SetCurFrame(1);
+    image->SetParentImage(pNewObject->GetBitmapInfo("HairBL"));
+
+    pNewObject->AddBitmapInfo(m_pHairBR_Shadow);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairBR_Shadow");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(0, -300);
+    image->SetCurFrame(4);
+    image->SetParentImage(pNewObject->GetBitmapInfo("HairBR"));
+
+
+
+    // 라인
+    pNewObject->AddBitmapInfo(m_pHair_AhogeL_Line);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("Hair_AhogeL_Line");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(12, 40);
+    image->SetCurFrame(2);
+    image->SetParentImage(pNewObject->GetBitmapInfo("Hair_AhogeL"));
+
+    pNewObject->AddBitmapInfo(m_pHair_AhogeR_Line);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("Hair_AhogeR_Line");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(-42, 40);
+    image->SetCurFrame(2);
+    image->SetParentImage(pNewObject->GetBitmapInfo("Hair_AhogeR"));
+
+    pNewObject->AddBitmapInfo(m_pHairB_HeadL_Line);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairB_HeadL_Line");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(0, -170);
+    image->SetCurFrame(2);
+    image->SetParentImage(pNewObject->GetBitmapInfo("HairB_HeadL"));
+
+    pNewObject->AddBitmapInfo(m_pHairB_HeadR_Line);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairB_HeadR_Line");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(0, -170);
+    image->SetCurFrame(5);
+    image->SetParentImage(pNewObject->GetBitmapInfo("HairB_HeadR"));
+
+    pNewObject->AddBitmapInfo(m_pHairB_Head_SideTuftL_Line);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairB_Head_SideTuftL_Line");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(65, -35);
+    image->SetCurFrame(2);
+    image->SetParentImage(pNewObject->GetBitmapInfo("HairB_Head_SideTuftL"));
+
+    pNewObject->AddBitmapInfo(m_pHairB_Head_SideTuftR_Line);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairB_Head_SideTuftR_Line");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(-62, -50);
+    image->SetCurFrame(2);
+    image->SetParentImage(pNewObject->GetBitmapInfo("HairB_Head_SideTuftR"));
+
+    pNewObject->AddBitmapInfo(m_pHairBL_Line);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairBL_Line");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(0, -300);
+    image->SetCurFrame(2);
+    image->SetParentImage(pNewObject->GetBitmapInfo("HairBL"));
+
+    pNewObject->AddBitmapInfo(m_pHairBR_Line);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HairBR_Line");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(0, -300);
+    image->SetCurFrame(5);
+    image->SetParentImage(pNewObject->GetBitmapInfo("HairBR"));
+
+    pNewObject->AddBitmapInfo(m_pArmL_Line);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("ArmL_Line");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(-45, 95);
+    image->SetCurFrame(1);
+    image->SetParentImage(pNewObject->GetBitmapInfo("ArmL"));
+
+    pNewObject->AddBitmapInfo(m_pHandL_Line);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("HandL_Line");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->GetPivot() = Vector2f(-12, 70);
+    image->SetCurFrame(1);
+    image->SetParentImage(pNewObject->GetBitmapInfo("HandL"));
+
+    pNewObject->AddBitmapInfo(m_pEffect_Line);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("Effect_Line");
+    image->GetTransform().SetPosition(Vector2f(0, 0));
+    image->SetCurFrame(1);
+    image->SetParentImage(pNewObject->GetBitmapInfo("Effect"));
+
+
+
+    // 널(컨트롤러) 객체
+    pNewObject->AddBitmapInfo(m_pNull_Hair);
+    image = pNewObject->GetLastBitmapInfo();
+    image->SetName("Null_Hair");
+    image->GetTransform().SetPosition(Vector2f(0, -300));
+	image->SetActive(false); // 널 객체는 보이지 않게 설정
+
+
+
+	// 부모-자식 관계 설정
+    pNewObject->GetBitmapInfo("Face")->SetParentImage(pNewObject->GetBitmapInfo("Body"));
+    pNewObject->GetBitmapInfo("Body_ArmL")->SetParentImage(pNewObject->GetBitmapInfo("Body"));
+    pNewObject->GetBitmapInfo("Body_ArmR")->SetParentImage(pNewObject->GetBitmapInfo("Body"));
+
+    pNewObject->GetBitmapInfo("Nose")->SetParentImage(pNewObject->GetBitmapInfo("Face"));
+    pNewObject->GetBitmapInfo("Null_Hair")->SetParentImage(pNewObject->GetBitmapInfo("Face"));
+
+    pNewObject->GetBitmapInfo("EyeL_White")->SetParentImage(pNewObject->GetBitmapInfo("Nose"));
+    pNewObject->GetBitmapInfo("EyeR_White")->SetParentImage(pNewObject->GetBitmapInfo("Nose"));
+    pNewObject->GetBitmapInfo("Mouth")->SetParentImage(pNewObject->GetBitmapInfo("Nose"));
+
+    pNewObject->GetBitmapInfo("EyeL_Brow")->SetParentImage(pNewObject->GetBitmapInfo("EyeL_White"));
+    pNewObject->GetBitmapInfo("EyeL_Lid")->SetParentImage(pNewObject->GetBitmapInfo("EyeL_White"));
+    pNewObject->GetBitmapInfo("EyeL_Pupil")->SetParentImage(pNewObject->GetBitmapInfo("EyeL_White"));
+
+    pNewObject->GetBitmapInfo("EyeR_Brow")->SetParentImage(pNewObject->GetBitmapInfo("EyeR_White"));
+    pNewObject->GetBitmapInfo("EyeR_Lid")->SetParentImage(pNewObject->GetBitmapInfo("EyeR_White"));
+    pNewObject->GetBitmapInfo("EyeR_Pupil")->SetParentImage(pNewObject->GetBitmapInfo("EyeR_White"));
+
+    pNewObject->GetBitmapInfo("HairF_SideL")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+    pNewObject->GetBitmapInfo("HairF_SideR")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+    pNewObject->GetBitmapInfo("HairF_Bang")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+    pNewObject->GetBitmapInfo("HairF")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+    pNewObject->GetBitmapInfo("HairSideL_1")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+    pNewObject->GetBitmapInfo("HairSideL_2")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+    pNewObject->GetBitmapInfo("HairSideR_1")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+    pNewObject->GetBitmapInfo("HairSideR_2")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+    pNewObject->GetBitmapInfo("Hair_AhogeL")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+    pNewObject->GetBitmapInfo("Hair_AhogeR")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+    pNewObject->GetBitmapInfo("HairB_HeadL")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+    pNewObject->GetBitmapInfo("HairB_HeadR")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+    pNewObject->GetBitmapInfo("HairB_Head_SideTuftL")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+    pNewObject->GetBitmapInfo("HairB_Head_SideTuftR")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+    pNewObject->GetBitmapInfo("HairBL")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+    pNewObject->GetBitmapInfo("HairBR")->SetParentImage(pNewObject->GetBitmapInfo("Null_Hair"));
+
+    pNewObject->GetBitmapInfo("HandL")->SetParentImage(pNewObject->GetBitmapInfo("ArmL"));
+
+
+
+    pNewObject->ReverseBitmapInfo();
 
 	// 애니메이터 설정
 	pNewObject->GetAnimator().SetOwner(pNewObject);
 	pNewObject->GetAnimator().AddAnimationClip(CoffiaAnimationClips::TestClip()); 
-    pNewObject->GetAnimator().SetCurrentClip("TestClip");
+    //pNewObject->GetAnimator().SetCurrentClip("TestClip");
 
     m_GameObjectPtrTable[0] = pNewObject; // 첫번째 자리에 만든 객체 넣기
 }

@@ -123,6 +123,8 @@ public:
 
 	Animator& GetAnimator() { return m_animator; }
 
+    void ReverseBitmapInfo();
+
 protected: 
 	Transform transform;    // _위치, 회전, 크기 정보
 
@@ -138,6 +140,7 @@ protected:
     Vector2f Rotate(Vector2f dir, float angleOffset);  // _방향 벡터를 받아 회전시키기
 
     void DrawBitmap(HDC hdc);
+    void DrawPivotMarker(HDC hdc, Vector2f pivotPos);
 	void SetRotationTransform(HDC hdc, float degree, Vector2f pivot);
     void UpdateFrame(float deltaTime);
 

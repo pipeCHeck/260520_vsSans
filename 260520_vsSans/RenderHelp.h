@@ -36,7 +36,7 @@ namespace renderHelp
         void SetActive(bool active) { this->active = active; }
 
 		void SetName(String name) { this->name = name; }
-		void SetParentImage(BitmapInfo* parent) { this->parentImage = parent; }
+        void SetParentImage(BitmapInfo* parent) { this->parentImage = parent; }
 
 		Transform& GetTransform() { return transform; }
 		Transform& GetAniTransform() { return aniTransform; }

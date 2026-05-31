@@ -279,11 +279,40 @@ void GameObject::DrawBitmap(HDC hdc)
 		// hdc 상태 복원(회전에 의해 설정한 것 돌리기)
         RestoreDC(hdc, -1);
 
+		// 피벗 마커 그리기 (디버그용)
+        DrawPivotMarker(hdc, pivotPos);
+
         // 비트맵 핸들 복원
         SelectObject(hBitmapDC, hOldBitmap);
     }
 
     DeleteDC(hBitmapDC);
+}
+
+void GameObject::DrawPivotMarker(HDC hdc, Vector2f pivotPos)
+{
+    int radius = 4;
+    int line = 8;
+
+    int x = (int)pivotPos.x;
+    int y = (int)pivotPos.y;
+
+    HPEN hPen = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
+    HPEN hOldPen = (HPEN)SelectObject(hdc, hPen);
+
+    MoveToEx(hdc, x - line, y, nullptr);
+    LineTo(hdc, x + line, y);
+
+    MoveToEx(hdc, x, y - line, nullptr);
+    LineTo(hdc, x, y + line);
+
+    HBRUSH hOldBrush = (HBRUSH)SelectObject(hdc, GetStockObject(NULL_BRUSH));
+    Ellipse(hdc, x - radius, y - radius, x + radius, y + radius);
+
+    SelectObject(hdc, hOldBrush);
+    SelectObject(hdc, hOldPen);
+
+    DeleteObject(hPen);
 }
 
 void GameObject::SetRotationTransform(HDC hdc, float degree, Vector2f pivot)
@@ -343,4 +372,9 @@ BitmapInfo* GameObject::GetBitmapInfo(string name) {
         }
     }
     return nullptr;
+}
+
+void GameObject::ReverseBitmapInfo() 
+{
+	reverse(m_pBitmapInfo.begin(), m_pBitmapInfo.end());
 }
